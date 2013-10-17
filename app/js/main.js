@@ -33,10 +33,14 @@ require( [
 
 				interestsApp.controller('InterestsCtrl', function InterestsCtrl($scope) {
 						$scope.interests = [
-								{'name' : 'books'},
-								{'name' : 'music'},
-								{'name' : 'movies'}
+								{'name' : 'books',
+								 'preference': 1},
+								{'name' : 'music',
+								 'preference': 2},
+								{'name' : 'movies',
+								 'preference': 3}
 						];
+						$scope.orderProp = 'preference';
 				});
 
 				angular.bootstrap(document, [APP_NAME]);
