@@ -22,32 +22,15 @@ require.config({
 // hey Angular, we're bootstrapping manually!
 window.name = "NG_DEFER_BOOTSTRAP!";
 
-// require( [
-// 	'angular',
-// 	'app',
-// 	'routes'
-// ], function(angular, app, routes) {
-
 require( [
 	'angular'
 ], function(angular) {
 
+		var APP_NAME = 'myApp';
 
-		'use strict';
-		var $html = angular.element(document.getElementsByTagName('html')[0]);
-
-		debugger;
-
-		angular.element().ready(function() {
-				$html.addClass('ng-app');
-				angular.module('myApp', []);
-				// angular.bootstrap($html, [app['name']]);
-				angular.bootstrap($html, ['myApp']);
+		angular.element(document).ready(function() {
+				angular.module(APP_NAME, []);
+				angular.bootstrap(document, [APP_NAME]);
 		});
-
-		// angular.element(document).ready(function() {
-		// 		angular.module('myApp', []);
-		// 		angular.bootstrap(document, ['myApp']);
-		// });
 
 });
