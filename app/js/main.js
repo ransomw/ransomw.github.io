@@ -31,7 +31,12 @@ require( [
 		angular.element(document).ready(function() {
 				var interestsApp = angular.module(APP_NAME, []);
 
-				interestsApp.controller('InterestsCtrl', function InterestsCtrl($scope) {
+				interestsApp.controller('InterestsCtrl', function InterestsCtrl($scope, $http) {
+
+						$http.get('posts/test').success(function(data) {
+								$scope.test_post = data;
+						});
+
 						$scope.interests = [
 								{'name' : 'books',
 								 'preference': 1},
