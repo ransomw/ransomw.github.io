@@ -9,11 +9,26 @@
 	</head>
 	<body ng-controller="InterestsCtrl">
 
-		<ul>
-			<li ng-repeat="interest in interests">
-				{{interest.name}}
-			</li>
-		</ul>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span2">
+					<!--Sidebar content-->
+
+					Search: <input ng-model="query">
+
+				</div>
+				<div class="span10">
+					<!--Body content-->
+
+					<ul>
+						<li ng-repeat="interest in interests | filter:query">
+							{{interest.name}}
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
 
 		<script data-main="app/js/main"
 						src="bower_components/requirejs/require.js"></script>
