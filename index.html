@@ -7,9 +7,14 @@
 		<link rel="stylesheet" href="css/app.css">
 		<link rel="stylesheet" href="css/bootstrap.css">
 	</head>
-	<body>
+	<body ng-controller="InterestsCtrl">
 
-		<p>Nothing here {{'yet' + '!'}}</p>
+		<ul>
+			<li ng-repeat="interest in interests">
+				{{interest.name}}
+			</li>
+		</ul>
+
 		<script data-main="app/js/main"
 						src="bower_components/requirejs/require.js"></script>
 	</body>

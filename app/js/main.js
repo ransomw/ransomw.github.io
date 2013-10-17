@@ -29,7 +29,16 @@ require( [
 		var APP_NAME = 'myApp';
 
 		angular.element(document).ready(function() {
-				angular.module(APP_NAME, []);
+				var interestsApp = angular.module(APP_NAME, []);
+
+				interestsApp.controller('InterestsCtrl', function InterestsCtrl($scope) {
+						$scope.interests = [
+								{'name' : 'books'},
+								{'name' : 'music'},
+								{'name' : 'movies'}
+						];
+				});
+
 				angular.bootstrap(document, [APP_NAME]);
 		});
 
