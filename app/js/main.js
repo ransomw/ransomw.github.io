@@ -31,7 +31,9 @@ require( [
 		angular.element(document).ready(function() {
 				var interestsApp = angular.module(APP_NAME, []);
 
-				interestsApp.controller('InterestsCtrl', function InterestsCtrl($scope, $http) {
+				interestsApp.controller('InterestsCtrl', [
+						'$scope', '$http',
+						function InterestsCtrl($scope, $http) {
 
 						$http.get('posts/test').success(function(data) {
 								$scope.test_post = data;
@@ -46,7 +48,7 @@ require( [
 								 'preference': 3}
 						];
 						$scope.orderProp = 'preference';
-				});
+				}]);
 
 				angular.bootstrap(document, [APP_NAME]);
 		});
