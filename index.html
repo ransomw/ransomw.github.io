@@ -9,18 +9,25 @@
 	</head>
 	<body>
 
-		<div class="navbar-collapse" ng-controller="HeaderCtrl">
-			<ul class="nav navbar-nav">
-        <li ng-class="{ active: isActive('/interests')}"><a href="#/interests">
-						Interests
-				</a></li>
-        <li ng-class="{ active: isActive('/blog')}">
-					<a href="#/blog">
-						Blog
-				</a></li>
-			</ul>
+
+		<div class="container">
+			<div class="masthead" ng-controller="HeaderCtrl">
+				<ul class="nav nav-pills pull-right">
+					<li ng-class="{ active: isActive('/interests')}"><a href="#/interests">
+							Interests
+					</a></li>
+					<li ng-class="{ active: isActive('/blog')}">
+						<a href="#/blog">
+							Blog
+					</a></li>
+				</ul>
+				<h3 class="muted">Ransom</h3>
+			</div>
+
+			<hr/>
+
+			<div ng-view></div>
 		</div>
-		<div ng-view></div>
 
 		<script data-main="app/js/main"
 						src="bower_components/requirejs/require.js"></script>
