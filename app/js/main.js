@@ -23,32 +23,18 @@ require.config({
 window.name = "NG_DEFER_BOOTSTRAP!";
 
 require( [
-	'angular'
+		'angular',
+		'angularRoute',
+		'controllers'
 ], function(angular) {
 
 		var APP_NAME = 'myApp';
 
 		angular.element(document).ready(function() {
-				var interestsApp = angular.module(APP_NAME, []);
-
-				interestsApp.controller('InterestsCtrl', [
-						'$scope', '$http',
-						function InterestsCtrl($scope, $http) {
-
-						$http.get('posts/test').success(function(data) {
-								$scope.test_post = data;
-						});
-
-						$scope.interests = [
-								{'name' : 'books',
-								 'preference': 1},
-								{'name' : 'music',
-								 'preference': 2},
-								{'name' : 'movies',
-								 'preference': 3}
-						];
-						$scope.orderProp = 'preference';
-				}]);
+				var interestsApp = angular.module(APP_NAME, [
+						'ngRoute',
+						APP_NAME+'.controllers'
+				]);
 
 				angular.bootstrap(document, [APP_NAME]);
 		});
