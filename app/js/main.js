@@ -36,6 +36,19 @@ require( [
 						APP_NAME+'.controllers'
 				]);
 
+				interestsApp.config(
+						['$routeProvider',
+						 function($routeProvider) {
+								 $routeProvider.
+										 when('/interests', {
+												 templateUrl: 'app/partials/interests.html',
+												 controller: 'InterestsCtrl'
+										 }).
+										 otherwise({
+												 redirectTo: '/interests'
+										 });
+						 }]);
+
 				angular.bootstrap(document, [APP_NAME]);
 		});
 

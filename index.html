@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="ng-app">
+<html lang="en" ng-app="myApp">
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
@@ -7,35 +7,9 @@
 		<link rel="stylesheet" href="css/app.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 	</head>
-	<body ng-controller="InterestsCtrl">
+	<body>
 
-		<div class="container-fluid">
-			<div class="row-fluid">
-				<div class="span2">
-					<!--Sidebar content-->
-
-					Search: <input ng-model="query">
-					Sort by:
-					<select ng-model="orderProp">
-						<option value="name">Alphabetical</option>
-						<option value="preference">Preference</option>
-					</select>
-
-				</div>
-				<div class="span10">
-					<!--Body content-->
-
-					<ul>
-						<li ng-repeat="interest in interests | filter:query | orderBy:orderProp">
-							{{interest.name}}
-						</li>
-					</ul>
-
-					<p>{{test_post}}</p>
-
-				</div>
-			</div>
-		</div>
+		<div ng-view></div>
 
 		<script data-main="app/js/main"
 						src="bower_components/requirejs/require.js"></script>
