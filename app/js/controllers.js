@@ -4,13 +4,8 @@ define(['angular'], function (angular) {
 		var myAppControllers = angular.module(APP_NAME+'.controllers', []);
 
 		myAppControllers.controller('InterestsCtrl', [
-						'$scope', '$http',
-						function InterestsCtrl($scope, $http) {
-
-						$http.get('posts/test').success(function(data) {
-								$scope.test_post = data;
-						});
-
+						'$scope',
+						function InterestsCtrl($scope) {
 						$scope.interests = [
 								{'name' : 'books',
 								 'preference': 1},
@@ -21,6 +16,14 @@ define(['angular'], function (angular) {
 						];
 						$scope.orderProp = 'preference';
 				}]);
+
+		myAppControllers.controller('BlogCtrl', [
+				'$scope', '$http',
+				function BlogCtrl($scope, $http) {
+						$http.get('posts/test').success(function(data) {
+								$scope.test_post = data;
+						});
+				}])
 
 		return myAppControllers;
 });

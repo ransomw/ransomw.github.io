@@ -40,6 +40,10 @@ require( [
 						['$routeProvider',
 						 function($routeProvider) {
 								 $routeProvider.
+										 when('/blog', {
+												 templateUrl: 'app/partials/blog.html',
+												 controller: 'BlogCtrl'
+										 }).
 										 when('/interests', {
 												 templateUrl: 'app/partials/interests.html',
 												 controller: 'InterestsCtrl'
