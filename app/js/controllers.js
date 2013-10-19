@@ -17,13 +17,21 @@ define(['angular'], function (angular) {
 						$scope.orderProp = 'preference';
 				}]);
 
+		myAppControllers.controller('HeaderCtrl', [
+				'$scope', '$location',
+				function HeaderCtrl($scope, $location) {
+						$scope.isActive = function (viewLocation) {
+								return viewLocation === $location.path();
+						};
+				}]);
+
 		myAppControllers.controller('BlogCtrl', [
 				'$scope', '$http',
 				function BlogCtrl($scope, $http) {
 						$http.get('posts/test').success(function(data) {
 								$scope.test_post = data;
 						});
-				}])
+				}]);
 
 		return myAppControllers;
 });
