@@ -3,20 +3,6 @@ define(['angular'], function (angular) {
 
 		var myAppControllers = angular.module(APP_NAME+'.controllers', []);
 
-		myAppControllers.controller('InterestsCtrl', [
-						'$scope',
-						function InterestsCtrl($scope) {
-						$scope.interests = [
-								{'name' : 'books',
-								 'preference': 1},
-								{'name' : 'music',
-								 'preference': 2},
-								{'name' : 'movies',
-								 'preference': 3}
-						];
-						$scope.orderProp = 'preference';
-				}]);
-
 		myAppControllers.controller('HeaderCtrl', [
 				'$scope', '$location',
 				function HeaderCtrl($scope, $location) {
