@@ -44,12 +44,12 @@ require( [
 												 templateUrl: 'app/partials/blog.html',
 												 controller: 'BlogCtrl'
 										 }).
-										 when('/interests', {
-												 templateUrl: 'app/partials/interests.html',
-												 controller: 'InterestsCtrl'
+										 when('/about', {
+												 templateUrl: 'app/partials/about.html',
+												 controller: 'AboutCtrl'
 										 }).
 										 otherwise({
-												 redirectTo: '/interests'
+												 redirectTo: '/about'
 										 });
 						 }]);
 

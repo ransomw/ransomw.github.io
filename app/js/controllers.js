@@ -25,6 +25,12 @@ define(['angular'], function (angular) {
 						};
 				}]);
 
+		myAppControllers.controller('AboutCtrl', [
+				'$scope',
+				function BlogCtrl($scope) {
+						$scope.mVar = 'asdf';
+				}]);
+
 		myAppControllers.controller('BlogCtrl', [
 				'$scope', '$http',
 				function BlogCtrl($scope, $http) {

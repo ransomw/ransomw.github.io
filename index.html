@@ -3,7 +3,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
-		<title>Angular Test</title>
+		<title>Ransom</title>
 		<link rel="stylesheet" href="css/app.css">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 	</head>
@@ -11,10 +11,10 @@
 
 
 		<div class="container">
-			<div class="masthead" ng-controller="HeaderCtrl">
-				<ul class="nav nav-pills pull-right">
-					<li ng-class="{ active: isActive('/interests')}"><a href="#/interests">
-							Interests
+			<div class="masthead">
+				<ul class="nav nav-pills pull-right" ng-controller="HeaderCtrl">
+					<li ng-class="{ active: isActive('/about')}"><a href="#/about">
+							About
 					</a></li>
 					<li ng-class="{ active: isActive('/blog')}">
 						<a href="#/blog">
