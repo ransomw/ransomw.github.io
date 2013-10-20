@@ -14,7 +14,7 @@ define(['angular'], function (angular) {
 		myAppControllers.controller('AboutCtrl', [
 				'$scope',
 				function BlogCtrl($scope) {
-						$scope.mVar = 'asdf';
+						$scope.resume_link = 'media/resume/resume-2012.pdf';
 				}]);
 
 		myAppControllers.controller('BlogCtrl', [
