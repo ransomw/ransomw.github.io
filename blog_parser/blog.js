@@ -74,24 +74,30 @@
 var blog = (function(){
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"post":3,"e":4,"EOF":5,"CHAR":6,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",6:"CHAR"},
-productions_: [0,[3,2],[4,2],[4,1]],
+symbols_: {"error":2,"post":3,"metadata_line":4,"PGBREAK":5,"text":6,"EOF":7,"metadata_title":8,":":9,"metadata_content":10,"CHAR":11,"e":12,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"PGBREAK",7:"EOF",9:":",11:"CHAR",12:"e"},
+productions_: [0,[3,4],[4,3],[8,1],[10,1],[6,2],[6,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
 var $0 = $$.length - 1;
 switch (yystate) {
-case 1:return $$[$0-1];
+case 1:return {metadata: $$[$0-3], post: $$[$0-1]};
 break;
-case 2:this.$ = $$[$0-1] + $$[$0];
+case 2:this.$ = {title: $$[$0-2], data: $$[$0]};
 break;
 case 3:this.$ = $$[$0];
 break;
+case 4:this.$ = $$[$0];
+break;
+case 5:debugger; this.$ = $$[$0-1] + $$[$0];
+break;
+case 6:this.$ = $$[$0];
+break;
 }
 },
-table: [{3:1,4:2,6:[1,3]},{1:[3]},{5:[1,4]},{4:5,5:[2,3],6:[1,3]},{1:[2,1]},{5:[2,2]}],
-defaultActions: {4:[2,1],5:[2,2]},
+table: [{3:1,4:2,6:4,8:3,11:[1,5]},{1:[3]},{5:[1,6]},{9:[1,7]},{9:[2,3]},{5:[2,6],7:[2,6],9:[2,6],12:[1,8]},{6:9,11:[1,5]},{6:11,10:10,11:[1,5]},{5:[2,5],7:[2,5],9:[2,5]},{7:[1,12]},{5:[2,2]},{5:[2,4]},{1:[2,1]}],
+defaultActions: {4:[2,3],10:[2,2],11:[2,4],12:[2,1]},
 parseError: function parseError(str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -557,14 +563,18 @@ performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
 
 var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
-case 0:return 6;
+case 0:return 5;
 break;
-case 1:return 5;
+case 1:return 11;
+break;
+case 2:return 'NEWLINE';
+break;
+case 3:return 7;
 break;
 }
 },
-rules: [/^(?:.)/,/^(?:$)/],
-conditions: {"INITIAL":{"rules":[0,1],"inclusive":true}}
+rules: [/^(?:)/,/^(?:.)/,/^(?:\\n)/,/^(?:$)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3],"inclusive":true}}
 };
 return lexer;
 })();

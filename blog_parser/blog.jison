@@ -1,8 +1,10 @@
 %lex
 %%
 
+'' {return 'PGBREAK';}
 . {return 'CHAR';}
-<<EOF>>               {return 'EOF';}
+'\n' {return 'NEWLINE';}
+<<EOF>> {return 'EOF';}
 
 /lex
 
@@ -12,11 +14,47 @@
 %% /* language grammar */
 
 post
-    : e EOF
-        {return $1;}
+    : metadata_line PGBREAK text EOF
+        {return {metadata: $1, post: $3};}
     ;
 
-e
+/*
+metadata
+		: metadata_line NEWLINE metadata
+		  {if ($3[$1.title] !== undefined) {
+					throw Error("duplicate metadata titles");
+					}
+			 metadata = Object.create($3);
+			 metadata[$1.title] = $1.data;
+			 $$ = metadata; }
+		| metadata_line
+		  {$$ = {$1.title: $1.data};}
+		;
+*/
+
+metadata_line
+		: metadata_title ':' metadata_content
+		  {$$ = {title: $1, data: $3};}
+		;
+
+metadata_title
+		: text
+		  {$$ = $1;}
+		;
+
+metadata_content
+		: text
+		  {$$ = $1;}
+		;
+
+/*
+post
+		: text
+		  {$$ = $1;}
+		;
+*/
+
+text
     : CHAR e
         {$$ = $1 + $2;}
     | CHAR
