@@ -1,4 +1,7 @@
-define(['angular'], function (angular) {
+define(['angular',
+				'blogParser'
+			 ], function (angular,
+										blogParser) {
 		var APP_NAME = 'myApp';
 
 		var myAppControllers = angular.module(APP_NAME+'.controllers', []);
@@ -21,7 +24,7 @@ define(['angular'], function (angular) {
 				'$scope', '$http',
 				function BlogCtrl($scope, $http) {
 						$http.get('posts/test').success(function(data) {
-								$scope.test_post = data;
+								$scope.test_post = blogParser.parse(data);
 						});
 				}]);
 
