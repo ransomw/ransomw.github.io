@@ -24,7 +24,6 @@ define(['angular',
 				'$scope', '$http',
 				function BlogCtrl($scope, $http) {
 						$http.get('posts/test').success(function(data) {
-								debugger;
 
 								$scope.test_post = blogParser.parse(data);
 

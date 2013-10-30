@@ -50,18 +50,26 @@ metadata_content
 
 post_content
 	  : WORD post_content
-        {$$ = $1 + $2;}
+		  { $2.push($1);
+				$$ = $2; }
     | CHAR post_content
-        {$$ = $1 + $2;}
-		| TAG post_content
-        {$$ = $1 + $2;}
+		  { $2.push($1);
+				$$ = $2; }
+		| post_tag post_content
+		  { $2.push($1);
+				$$ = $2; }
     | WORD
-        {$$ = $1;}
+        {$$ = [$1];}
     | CHAR
-        {$$ = $1;}
-    | TAG
-        {$$ = $1;}
+        {$$ = [$1];}
+    | post_tag
+        {$$ = [$1];}
     ;
+
+post_tag
+		: TAG
+		  {$$ = $1;}
+		;
 
 text
 	  : WORD text
