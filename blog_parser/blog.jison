@@ -24,29 +24,44 @@ metadata
 		: metadata_entry metadata
 		  { $2.push($1);
 				$$ = $2; }
+		/*
+		{ $2[$1[0]] = $1[1];
+		  $$ = $2; }
+		*/
 		| metadata_entry
-		  {$$ = [$1];}
+		  {$$ = [[$1[0], $1[1]]];}
+		/*  {$$ = {$1[0] : $1[1]};} */
 		;
 
 metadata_entry
 		: metadata_title metadata_content
-		  {$$ = [$1, $2]; console.log("parsed metadata line"); }
+		  {$$ = [$1, $2];}
 		;
 
 metadata_title
 		: TAG
-		  {console.log("parsed metadata title as '"+$1+"'"); $$ = $1;}
+		  {$$ = $1.slice(1,-1);}
 		;
 
 metadata_content
 		: text
-		  {console.log("parsed metadata content as '"+$1+"'"); $$ = $1;}
+		  {$$ = $1.trim();}
 		;
 
 post_content
-		: text
-		  {$$ = $1;}
-		;
+	  : WORD post_content
+        {$$ = $1 + $2;}
+    | CHAR post_content
+        {$$ = $1 + $2;}
+		| TAG post_content
+        {$$ = $1 + $2;}
+    | WORD
+        {$$ = $1;}
+    | CHAR
+        {$$ = $1;}
+    | TAG
+        {$$ = $1;}
+    ;
 
 text
 	  : WORD text
