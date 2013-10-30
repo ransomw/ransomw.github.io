@@ -3,7 +3,12 @@
 		<div class="span10">
 			<!--Body content-->
 
-			<p>{{test_post}}</p>
+			<ul>
+				<li ng-repeat="post in posts">
+					<h2>{{post.title}}</h2>
+					{{post.content}}
+				</li>
+			</ul>
 
 		</div>
 	</div>
