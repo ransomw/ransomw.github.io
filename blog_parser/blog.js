@@ -74,9 +74,9 @@
 var blog = (function(){
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"post":3,"metadata":4,"PGBREAK":5,"post_content":6,"EOF":7,"metadata_entry":8,"metadata_title":9,"metadata_content":10,"TAG":11,"text":12,"WORD":13,"CHAR":14,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"PGBREAK",7:"EOF",11:"TAG",13:"WORD",14:"CHAR"},
-productions_: [0,[3,4],[4,2],[4,1],[8,2],[9,1],[10,1],[6,2],[6,2],[6,2],[6,1],[6,1],[6,1],[12,2],[12,2],[12,1],[12,1]],
+symbols_: {"error":2,"post":3,"metadata":4,"PGBREAK":5,"post_content":6,"EOF":7,"metadata_entry":8,"metadata_title":9,"metadata_content":10,"TAG":11,"text":12,"WORD":13,"CHAR":14,"post_tag":15,"END_TAG":16,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"PGBREAK",7:"EOF",11:"TAG",13:"WORD",14:"CHAR",16:"END_TAG"},
+productions_: [0,[3,4],[4,2],[4,1],[8,2],[9,1],[10,1],[6,2],[6,2],[6,2],[6,1],[6,1],[6,1],[15,3],[12,2],[12,2],[12,1],[12,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
@@ -95,30 +95,59 @@ case 5:this.$ = $$[$0].slice(1,-1);
 break;
 case 6:this.$ = $$[$0].trim();
 break;
-case 7:this.$ = $$[$0-1] + $$[$0];
+case 7: if (typeof $$[$0][0] == "string") {
+					$$[$0][0] = $$[$0-1] + $$[$0][0];
+				} else {
+					$$[$0].unshift($$[$0-1]);
+				}
+				this.$ = $$[$0]; 
 break;
-case 8:this.$ = $$[$0-1] + $$[$0];
+case 8: if (typeof $$[$0][0] == "string") {
+					$$[$0][0] = $$[$0-1] + $$[$0][0];
+				} else {
+					$$[$0].unshift($$[$0-1]);
+				}
+				this.$ = $$[$0]; 
 break;
-case 9:this.$ = $$[$0-1] + $$[$0];
+case 9: $$[$0].unshift($$[$0-1]);
+				this.$ = $$[$0]; 
 break;
-case 10:this.$ = $$[$0];
+case 10:this.$ = [$$[$0]];
 break;
-case 11:this.$ = $$[$0];
+case 11:this.$ = [$$[$0]];
 break;
-case 12:this.$ = $$[$0];
+case 12:this.$ = [$$[$0]];
 break;
-case 13:this.$ = $$[$0-1] + $$[$0];
+case 13:
+			var start_tag_contents = $$[$0-2].slice(1,-1);
+			var end_tag_name = $$[$0].slice(2,-1);
+			var start_tag_split = start_tag_contents.split('=');
+		  var start_tag_name = start_tag_split[0];
+			if (start_tag_name != end_tag_name) {
+				 // TODO: replace with parse error
+				 throw new Error("start tag '"+
+				 			start_tag_name+"' does not match end tag name '"+
+							end_tag_name);
+			}
+			var return_obj = {tag : start_tag_name, text : $$[$0-1]};
+			if (start_tag_split.length >= 2) {
+				 // TODO: multiple equal signs in start tag
+				 return_obj['val'] = start_tag_split[1];
+			}
+			this.$ = return_obj;
 break;
 case 14:this.$ = $$[$0-1] + $$[$0];
 break;
-case 15:this.$ = $$[$0];
+case 15:this.$ = $$[$0-1] + $$[$0];
 break;
 case 16:this.$ = $$[$0];
 break;
+case 17:this.$ = $$[$0];
+break;
 }
 },
-table: [{3:1,4:2,8:3,9:4,11:[1,5]},{1:[3]},{5:[1,6]},{4:7,5:[2,3],8:3,9:4,11:[1,5]},{10:8,12:9,13:[1,10],14:[1,11]},{13:[2,5],14:[2,5]},{6:12,11:[1,15],13:[1,13],14:[1,14]},{5:[2,2]},{5:[2,4],11:[2,4]},{5:[2,6],11:[2,6]},{5:[2,15],11:[2,15],12:16,13:[1,10],14:[1,11]},{5:[2,16],11:[2,16],12:17,13:[1,10],14:[1,11]},{7:[1,18]},{6:19,7:[2,10],11:[1,15],13:[1,13],14:[1,14]},{6:20,7:[2,11],11:[1,15],13:[1,13],14:[1,14]},{6:21,7:[2,12],11:[1,15],13:[1,13],14:[1,14]},{5:[2,13],11:[2,13]},{5:[2,14],11:[2,14]},{1:[2,1]},{7:[2,7]},{7:[2,8]},{7:[2,9]}],
-defaultActions: {7:[2,2],18:[2,1],19:[2,7],20:[2,8],21:[2,9]},
+table: [{3:1,4:2,8:3,9:4,11:[1,5]},{1:[3]},{5:[1,6]},{4:7,5:[2,3],8:3,9:4,11:[1,5]},{10:8,12:9,13:[1,10],14:[1,11]},{13:[2,5],14:[2,5]},{6:12,11:[1,16],13:[1,13],14:[1,14],15:15},{5:[2,2]},{5:[2,4],11:[2,4]},{5:[2,6],11:[2,6]},{5:[2,16],11:[2,16],12:17,13:[1,10],14:[1,11],16:[2,16]},{5:[2,17],11:[2,17],12:18,13:[1,10],14:[1,11],16:[2,17]},{7:[1,19]},{6:20,7:[2,10],11:[1,16],13:[1,13],14:[1,14],15:15},{6:21,7:[2,11],11:[1,16],13:[1,13],14:[1,14],15:15},{6:22,7:[2,12],11:[1,16],13:[1,13],14:[1,14],15:15},{12:23,13:[1,10],14:[1,11]},{5:[2,14],11:[2,14],16:[2,14]},{5:[2,15],11:[2,15],16:[2,15]},{1:[2,1]},{7:[2,7]},{7:[2,8]},{7:[2,9]},{16:[1,24]},{7:[2,13],11:[2,13],13:[2,13],14:[2,13]}],
+defaultActions: {7:[2,2],19:[2,1],20:[2,7],21:[2,8],22:[2,9]},
 parseError: function parseError(str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -586,18 +615,20 @@ var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
 case 0:return 5;
 break;
-case 1:return 11;
+case 1:return 16;
 break;
-case 2:return 13;
+case 2:return 11;
 break;
-case 3:return 14;
+case 3:return 13;
 break;
-case 4:return 7;
+case 4:return 14;
+break;
+case 5:return 7;
 break;
 }
 },
-rules: [/^(?:)/,/^(?:\[(.|\n)*?\])/,/^(?:[a-zA-Z0-9]+)/,/^(?:(.|\n))/,/^(?:$)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4],"inclusive":true}}
+rules: [/^(?:)/,/^(?:\[\/(.|\n)*?\])/,/^(?:\[(.|\n)*?\])/,/^(?:[a-zA-Z0-9]+)/,/^(?:(.|\n))/,/^(?:$)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5],"inclusive":true}}
 };
 return lexer;
 })();

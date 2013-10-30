@@ -2,6 +2,7 @@
 %%
 
 "" {return 'PGBREAK';}
+"[/"(.|\n)*?"]" {return 'END_TAG';}
 "["(.|\n)*?"]" {return 'TAG';}
 [a-zA-Z0-9]+ {return 'WORD';}
 /* (\n) {return 'NEWLINE';} */
@@ -50,13 +51,21 @@ metadata_content
 
 post_content
 	  : WORD post_content
-		  { $2.push($1);
+		  { if (typeof $2[0] == "string") {
+					$2[0] = $1 + $2[0];
+				} else {
+					$2.unshift($1);
+				}
 				$$ = $2; }
     | CHAR post_content
-		  { $2.push($1);
+		  { if (typeof $2[0] == "string") {
+					$2[0] = $1 + $2[0];
+				} else {
+					$2.unshift($1);
+				}
 				$$ = $2; }
 		| post_tag post_content
-		  { $2.push($1);
+		  { $2.unshift($1);
 				$$ = $2; }
     | WORD
         {$$ = [$1];}
@@ -67,8 +76,24 @@ post_content
     ;
 
 post_tag
-		: TAG
-		  {$$ = $1;}
+		: TAG text END_TAG
+		  {
+			var start_tag_contents = $1.slice(1,-1);
+			var end_tag_name = $3.slice(2,-1);
+			var start_tag_split = start_tag_contents.split('=');
+		  var start_tag_name = start_tag_split[0];
+			if (start_tag_name != end_tag_name) {
+				 // TODO: replace with parse error
+				 throw new Error("start tag '"+
+				 			start_tag_name+"' does not match end tag name '"+
+							end_tag_name);
+			}
+			var return_obj = {tag : start_tag_name, text : $2};
+			if (start_tag_split.length >= 2) {
+				 // TODO: multiple equal signs in start tag
+				 return_obj['val'] = start_tag_split[1];
+			}
+			$$ = return_obj;}
 		;
 
 text
