@@ -1,9 +1,12 @@
 %lex
 %%
 
-'' {return 'PGBREAK';}
-. {return 'CHAR';}
-'\n' {return 'NEWLINE';}
+"" {return 'PGBREAK';}
+":" {return 'SEMICOLON';}
+"["(.|\n)*?"]" {return 'TAG';}
+[a-zA-Z0-9]+ {return 'WORD';}
+(\n) {return 'NEWLINE';}
+(.|\n) {return 'CHAR';}
 <<EOF>> {return 'EOF';}
 
 /lex
@@ -14,8 +17,8 @@
 %% /* language grammar */
 
 post
-    : metadata_line PGBREAK text EOF
-        {return {metadata: $1, post: $3};}
+    : metadata_line NEWLINE PGBREAK text EOF
+        {console.log("parsed post"); return {metadata: $1, post: $3};}
     ;
 
 /*
@@ -33,18 +36,18 @@ metadata
 */
 
 metadata_line
-		: metadata_title ':' metadata_content
-		  {$$ = {title: $1, data: $3};}
+		: metadata_title SEMICOLON metadata_content
+		  {$$ = {title: $1, data: $3}; console.log("parsed metadata line"); }
 		;
 
 metadata_title
-		: text
-		  {$$ = $1;}
+		: WORD
+		  {console.log("parsed metadata title as '"+$1+"'"); $$ = $1;}
 		;
 
 metadata_content
 		: text
-		  {$$ = $1;}
+		  {console.log("parsed metadata content as '"+$1+"'"); $$ = $1;}
 		;
 
 /*
@@ -55,8 +58,12 @@ post
 */
 
 text
-    : CHAR e
+	  : WORD text
         {$$ = $1 + $2;}
+    | CHAR text
+        {$$ = $1 + $2;}
+    | WORD
+        {$$ = $1;}
     | CHAR
         {$$ = $1;}
     ;

@@ -74,30 +74,34 @@
 var blog = (function(){
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"post":3,"metadata_line":4,"PGBREAK":5,"text":6,"EOF":7,"metadata_title":8,":":9,"metadata_content":10,"CHAR":11,"e":12,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"PGBREAK",7:"EOF",9:":",11:"CHAR",12:"e"},
-productions_: [0,[3,4],[4,3],[8,1],[10,1],[6,2],[6,1]],
+symbols_: {"error":2,"post":3,"metadata_line":4,"NEWLINE":5,"PGBREAK":6,"text":7,"EOF":8,"metadata_title":9,"SEMICOLON":10,"metadata_content":11,"WORD":12,"CHAR":13,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"NEWLINE",6:"PGBREAK",8:"EOF",10:"SEMICOLON",12:"WORD",13:"CHAR"},
+productions_: [0,[3,5],[4,3],[9,1],[11,1],[7,2],[7,2],[7,1],[7,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
 var $0 = $$.length - 1;
 switch (yystate) {
-case 1:return {metadata: $$[$0-3], post: $$[$0-1]};
+case 1:console.log("parsed post"); return {metadata: $$[$0-4], post: $$[$0-2]};
 break;
-case 2:this.$ = {title: $$[$0-2], data: $$[$0]};
+case 2:this.$ = {title: $$[$0-2], data: $$[$0]}; console.log("parsed metadata line"); 
 break;
-case 3:this.$ = $$[$0];
+case 3:console.log("parsed metadata title as '"+$$[$0]+"'"); this.$ = $$[$0];
 break;
-case 4:this.$ = $$[$0];
+case 4:console.log("parsed metadata content as '"+$$[$0]+"'"); this.$ = $$[$0];
 break;
-case 5:debugger; this.$ = $$[$0-1] + $$[$0];
+case 5:this.$ = $$[$0-1] + $$[$0];
 break;
-case 6:this.$ = $$[$0];
+case 6:this.$ = $$[$0-1] + $$[$0];
+break;
+case 7:this.$ = $$[$0];
+break;
+case 8:this.$ = $$[$0];
 break;
 }
 },
-table: [{3:1,4:2,6:4,8:3,11:[1,5]},{1:[3]},{5:[1,6]},{9:[1,7]},{9:[2,3]},{5:[2,6],7:[2,6],9:[2,6],12:[1,8]},{6:9,11:[1,5]},{6:11,10:10,11:[1,5]},{5:[2,5],7:[2,5],9:[2,5]},{7:[1,12]},{5:[2,2]},{5:[2,4]},{1:[2,1]}],
-defaultActions: {4:[2,3],10:[2,2],11:[2,4],12:[2,1]},
+table: [{3:1,4:2,9:3,12:[1,4]},{1:[3]},{5:[1,5]},{10:[1,6]},{10:[2,3]},{6:[1,7]},{7:9,11:8,12:[1,10],13:[1,11]},{7:12,12:[1,10],13:[1,11]},{5:[2,2]},{5:[2,4]},{5:[2,7],7:13,8:[2,7],12:[1,10],13:[1,11]},{5:[2,8],7:14,8:[2,8],12:[1,10],13:[1,11]},{8:[1,15]},{5:[2,5],8:[2,5]},{5:[2,6],8:[2,6]},{1:[2,1]}],
+defaultActions: {4:[2,3],8:[2,2],9:[2,4],15:[2,1]},
 parseError: function parseError(str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -563,18 +567,24 @@ performAction: function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
 
 var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
-case 0:return 5;
+case 0:return 6;
 break;
-case 1:return 11;
+case 1:return 10;
 break;
-case 2:return 'NEWLINE';
+case 2:return 'TAG';
 break;
-case 3:return 7;
+case 3:return 12;
+break;
+case 4:return 5;
+break;
+case 5:return 13;
+break;
+case 6:return 8;
 break;
 }
 },
-rules: [/^(?:)/,/^(?:.)/,/^(?:\\n)/,/^(?:$)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3],"inclusive":true}}
+rules: [/^(?:)/,/^(?::)/,/^(?:\[(.|\n)*?\])/,/^(?:[a-zA-Z0-9]+)/,/^(?:(\n))/,/^(?:(.|\n))/,/^(?:$)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6],"inclusive":true}}
 };
 return lexer;
 })();

@@ -24,7 +24,15 @@ define(['angular',
 				'$scope', '$http',
 				function BlogCtrl($scope, $http) {
 						$http.get('posts/test').success(function(data) {
+
 								$scope.test_post = blogParser.parse(data);
+
+								// try {
+								// 		$scope.test_post = blogParser.parse(data);
+								// } catch(e) {
+								// 		debugger;
+								// }
+
 						});
 				}]);
 
