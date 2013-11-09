@@ -33,6 +33,7 @@ define(['angular',
 		myAppControllers.controller('BlogCtrl', [
 				'$scope', '$http',
 				function BlogCtrl($scope, $http) {
+						// TODO make a service to access blog post data
 						$http.get('posts/post_list').success(function(data) {
 								post_names = data.split('\n').slice(0,-1);
 								var posts = [];
@@ -63,6 +64,20 @@ define(['angular',
 								$scope.posts = posts;
 						});
 				}]);
+
+		myAppControllers.directive('blogPost', function() {
+				return {
+						restrict: 'E',
+						scope: {
+								post: '=post'
+						},
+						// TODO put the parser_out.post object in scope
+						// TODO and use an ng-switch directive to loop over the posts
+						template: 'a <a href="http://www.google.com">link</a><br/>'+
+								'{{post.title}}<br>'+
+								'{{post.content}}'
+				};
+		});
 
 		return myAppControllers;
 });
