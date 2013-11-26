@@ -50,14 +50,23 @@ define(['angular',
 												}
 												post['title'] = post_metadata.title;
 												var post_content = "";
+												var post_items = [];
 												for (var j = 0; j < parser_out.post.length; j++) {
+														post_items[j] = {};
 														if (typeof parser_out.post[j] == 'string') {
 																post_content += parser_out.post[j];
+																post_items[j]['type'] = 'string';
+																post_items[j]['text'] = parser_out.post[j]
 														} else {
 																post_content += tag_to_html(parser_out.post[j]);
+																post_items[j]['type'] = 'url';
+																post_items[j]['val'] = parser_out.post[j].val;
+																post_items[j]['text'] = parser_out.post[j].text;
 														}
 												}
 												post['content'] = post_content;
+												post['post_items'] = post_items;
+												post['parser_out'] = parser_out.post;
 												posts.unshift(post);
 										});
 								}
@@ -71,8 +80,6 @@ define(['angular',
 						scope: {
 								post: '=post'
 						},
-						// TODO put the parser_out.post object in scope
-						// TODO and use an ng-switch directive to loop over the posts
 						templateUrl: 'app/partials/blog-post.html'
 				};
 		});
