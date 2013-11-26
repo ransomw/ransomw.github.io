@@ -73,9 +73,7 @@ define(['angular',
 						},
 						// TODO put the parser_out.post object in scope
 						// TODO and use an ng-switch directive to loop over the posts
-						template: 'a <a href="http://www.google.com">link</a><br/>'+
-								'{{post.title}}<br>'+
-								'{{post.content}}'
+						templateUrl: 'app/partials/blog-post.html'
 				};
 		});
 
