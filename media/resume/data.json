@@ -1,0 +1,101 @@
+{
+    "contact": {
+        "name": "Ransom Williams",
+        "phone": "",
+        "email": "auvergnerw@gmail.com"
+    },
+
+    "schools": {
+        "heading": "Education",
+        "list": [
+            { "name": "California Institute of Technology",
+              "date": "June 2010",
+              "major": "B.S. in Mathematics",
+              "courses": [
+                  {"name": "Abstract algebra, real and complex analysis, topology, combinatorics, dynamical systems"},
+                  {"name": "Special relativity, one-dimensional quantum mechanics"},
+                  {"name": "Fluid flow and Thermodynamics (Mech. Engineering)"}]
+            },
+            { "name": "Southwest University for Nationalities",
+              "date": "October 2012 - Present",
+              "major": "Mandarin language courses"
+            }]
+    },
+
+    "research": {
+        "heading": "Research Experience",
+        "list": [
+            { "name": "SURF (Summer Undergraduate Research Fellowship)",
+              "location": "Caltech",
+              "major": "Mechanical Engineering",
+              "date": "Summer 2004",
+              "advisor": "Prof. Hunt",
+              "items": [
+                  {"name": "Granular flow research to study the booming dunes phenomenon"}
+              ]
+            },
+            { "name": "SURF (Summer Undergraduate Research Fellowship)",
+              "location": "Caltech",
+              "major": "Mathematics",
+              "date": "Summer 2005",
+              "advisor": "Prof. Wilson",
+              "items": [
+                  {"name": "Studied Tutte's 5-flow conjecture, an old problem"},
+                  {"name": "Proved a restricted case"}
+              ]
+            },
+            { "name": "Ecoinformatics Summer Institute",
+              "location": "OSU",
+              "major": "Ecology, Atmospheric Science, Computer Science, Mech. Engineering",
+              "date": "Summer 2007",
+              "items": [
+                  {"name": "Work with undergraduate and early graduate researchers in an multidisciplinary environment"},
+                  {"name": "Studied shallow, gravity-driven fluid flow"}
+              ]
+            }
+        ]
+    },
+
+    "experience": {
+        "heading": "Work Experience",
+        "list": [
+            { "company": "Cinafides Consulting",
+              "start-date": "March 2013",
+              "end-date": "Present",
+              "title": "Systems Developer",
+              "location": "Chengdu, China",
+              "items": [
+                  {"name": "Focus on long-lived web services and mobile applications"},
+                  {"name": "Hacked out some short-term projects"},
+                  {"name": "Gaining business experience and client-facing insight"}
+              ]
+            },
+            { "company": "Synaptics",
+              "start-date": "March 2011",
+              "end-date": "July 2012",
+              "title": "Simulation Engineer",
+              "location": "Santa Clara, CA, USA",
+              "items": [
+                  {"name": "Designed, developed, and maintained automated hardware testing framework"},
+                  {"name": "Firmware build system edits"}
+              ]
+            }
+        ]
+    },
+
+    "skills": {
+        "heading": "Technical Strengths",
+        "list": [
+            { "type": "Computer Languages",
+              "items": "C, Python, Java, Bash, Haskell, lisp"
+            },
+            { "type": "APIs",
+              "items": "sockets, subprocess, django, flask, android"
+            },
+            { "type": "Tools",
+              "items": "emacs, gdb, make, eclipse, intellij, git, maven, Debian"
+            }
+        ]
+    }
+
+}
