@@ -25,11 +25,12 @@
 
 {{#list}}
 {\bf {{name}} } \hfill {\em {{date}} } \\
-{{major}} \smallskip \\
-{{#courses}}
-  {{name}}
+{{major}} {{#courses}} \smallskip \\
+{{#list}}
+  {{name}} \\
+{{/list}}
 {{/courses}}
-\vspace{0.5em}
+
 {{/list}}
 
 \end{rSection}

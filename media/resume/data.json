@@ -1,7 +1,7 @@
 {
     "contact": {
         "name": "Ransom Williams",
-        "phone": "",
+        "phone": "1 838 425 7620",
         "email": "auvergnerw@gmail.com"
     },
 
@@ -11,10 +11,10 @@
             { "name": "California Institute of Technology",
               "date": "June 2010",
               "major": "B.S. in Mathematics",
-              "courses": [
+              "courses": {"list": [
                   {"name": "Abstract algebra, real and complex analysis, topology, combinatorics, dynamical systems"},
                   {"name": "Special relativity, one-dimensional quantum mechanics"},
-                  {"name": "Fluid flow and Thermodynamics (Mech. Engineering)"}]
+                  {"name": "Fluid flow and Thermodynamics (Mech. Engineering)"}]}
             },
             { "name": "Southwest University for Nationalities",
               "date": "October 2012 - Present",
@@ -61,13 +61,13 @@
         "list": [
             { "company": "Cinafides Consulting",
               "start-date": "March 2013",
-              "end-date": "Present",
+              "end-date": "June 2014",
               "title": "Systems Developer",
               "location": "Chengdu, China",
               "items": [
-                  {"name": "Focus on long-lived web services and mobile applications"},
+                  {"name": "Rapid prototyping of web and mobile applications"},
                   {"name": "Hacked out some short-term projects"},
-                  {"name": "Gaining business experience and client-facing insight"}
+                  {"name": "Gained business experience and client-facing insight"}
               ]
             },
             { "company": "Synaptics",
@@ -87,13 +87,13 @@
         "heading": "Technical Strengths",
         "list": [
             { "type": "Computer Languages",
-              "items": "C, Python, Java, Bash, Haskell, lisp"
+              "items": "C, Python, Java, Bash, Haskell, Clojure, Javascript"
             },
             { "type": "APIs",
-              "items": "sockets, subprocess, django, flask, android"
+              "items": "android, django, flask, express, play"
             },
             { "type": "Tools",
-              "items": "emacs, gdb, make, eclipse, intellij, git, maven, Debian"
+              "items": "emacs, make, npm, intellij, git, maven, Debian"
             }
         ]
     }
