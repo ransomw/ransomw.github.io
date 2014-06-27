@@ -3,5 +3,4 @@ node_modules/
 *.log
 *.aux
 
-media/resume/resume.pdf
 media/resume/resume.tex
