@@ -2,14 +2,10 @@
 <h3>开发</h3>
 <div class="intro-text">
   <p>
-    I'm a software developer with about three years of professional experience currently seeking work in China.
-    <!-- todo: html template of resume
-         display in modal popup
-         pdf download button
-      -->
-    My <a href="media/resume/resume.pdf">resume</a> contains my contact information.
+		我有差不多三年专业的经验写软件, 和我现在在中国找新工作.
+    我的 <a href="media/resume/resume.pdf">简历</a> 里有我的联系消息.
   </p>
   <p>
-    I recently attended a <a href="http://chengdu.startupweekend.org/">startup weekend</a> event where I helped put together <a href="https://github.com/ransomw/GX/tree/master/public/client">part</a> of a <a href="https://github.com/ransomw/GX">demo</a> web app.
+    我最近参观 <a href="http://chengdu.startupweekend.org/">创业周末</a>了.  我帮助了创建 <a href="https://github.com/ransomw/GX/tree/master/public/client">一部分</a> 的 <a href="https://github.com/ransomw/GX">演示</a> 网 APP.
   </p>
 </div>

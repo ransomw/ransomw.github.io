@@ -20,8 +20,25 @@ require([
 
     if (navigator.language === 'zh-CN') {
         $('#main-content').html(index_zh);
+				document.getElementById('language').value = 'zn-CH';
     } else {
         $('#main-content').html(index_en);
+				document.getElementById('language').value = 'en';
     }
+
+		$('#language').change(function () {
+				var lang = this.options[this.selectedIndex].value;
+				switch (lang) {
+				case 'en':
+						$('#main-content').html(index_en);
+						break;
+				case 'zn-CH':
+						$('#main-content').html(index_zh);
+						break;
+				default:
+						throw new Error("unexpected language value '" + lang + "'");
+						break;
+				}
+		});
 
 });
