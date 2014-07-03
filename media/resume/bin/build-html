@@ -1,0 +1,19 @@
+var Mustache = require('mustache');
+var fs = require('fs');
+
+var m_data;
+
+fs.readFile(
+    [__dirname, '..', 'templates', 'resume.html.mu'].join('/'),
+    'utf8',
+    function(err, latex_template) {
+        fs.readFile(
+            [__dirname, '..', 'data.json'].join('/'),
+            'utf8',
+            function(err, json_string) {
+                json_data = JSON.parse(json_string);
+                var latex_out = Mustache.render(latex_template, json_data);
+                console.log(latex_out);
+            });
+
+    });

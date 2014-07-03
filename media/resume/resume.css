@@ -1,0 +1,24 @@
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 100%;
+    text-align: justify;
+    margin: 3em auto 2em;
+    width: 660px;
+}
+
+.list-item {
+    margin: 1em;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.date {
+    font-style: italic;
+    float: right;
+}
+
+.location {
+    float: right;
+}
