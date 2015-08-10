@@ -1,9 +1,9 @@
 body {
-    font-family: Georgia, "Times New Roman", Times, serif;
-    font-size: 100%;
-    text-align: justify;
-    margin: 3em auto 2em;
-    width: 660px;
+    margin-top: 50px;
+}
+
+.contact {
+    margin-bottom: 3em;
 }
 
 .list-item {
@@ -21,4 +21,8 @@ body {
 
 .location {
     float: right;
+}
+
+li {
+    margin-bottom: .3em;
 }

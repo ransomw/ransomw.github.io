@@ -10,11 +10,7 @@
         "list": [
             { "name": "California Institute of Technology",
               "date": "June 2010",
-              "major": "B.S. in Mathematics",
-              "courses": {"list": [
-                  {"name": "Abstract algebra, real and complex analysis, topology, combinatorics, dynamical systems"},
-                  {"name": "Special relativity, one-dimensional quantum mechanics"},
-                  {"name": "Fluid flow and Thermodynamics (Mech. Engineering)"}]}
+              "major": "B.S. in Mathematics"
             },
             { "name": "Southwest University for Nationalities",
               "date": "October 2012 - July 2014",
@@ -91,7 +87,7 @@
               "items": "C, Python, Java, Bash, Haskell, Clojure, Javascript"
             },
             { "type": "APIs",
-              "items": "android, django, flask, express, play"
+              "items": "android, django, flask, express, play, angular"
             },
             { "type": "Tools",
               "items": "emacs, make, npm, intellij, git, maven, Debian"
