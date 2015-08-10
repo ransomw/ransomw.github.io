@@ -1,7 +1,7 @@
 {
     "contact": {
         "name": "Ransom Williams",
-        "phone": "601 212 4980",
+        "phone": "601 620 7030",
         "email": "auvergnerw@gmail.com"
     },
 
@@ -27,15 +27,6 @@
         "list": [
             { "name": "SURF (Summer Undergraduate Research Fellowship)",
               "location": "Caltech",
-              "major": "Mechanical Engineering",
-              "date": "Summer 2004",
-              "advisor": "Prof. Hunt",
-              "items": [
-                  {"name": "Granular flow research to study the booming dunes phenomenon"}
-              ]
-            },
-            { "name": "SURF (Summer Undergraduate Research Fellowship)",
-              "location": "Caltech",
               "major": "Mathematics",
               "date": "Summer 2005",
               "advisor": "Prof. Wilson",
@@ -59,6 +50,16 @@
     "experience": {
         "heading": "Work Experience",
         "list": [
+            { "company": "Filentech",
+              "start-date": "October 2014",
+              "end-date": "December 2014",
+              "title": "Web Developer",
+              "location": "Manila, Philippines",
+              "items": [
+                  {"name": "Built a web-based accounting system and cash portal for an online casino"},
+                  {"name": "Java backend with Play, simple AJAX frontend with JQuery"}
+              ]
+            },
             { "company": "Cinafides Consulting",
               "start-date": "March 2013",
               "end-date": "June 2014",
