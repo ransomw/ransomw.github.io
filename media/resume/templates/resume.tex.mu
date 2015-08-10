@@ -30,7 +30,7 @@
   {{name}} \\
 {{/list}}
 {{/courses}}
-
+\\
 {{/list}}
 
 \end{rSection}

@@ -27,9 +27,14 @@
           <h4>{{heading}}</h4>
           {{#list}}
           <div class="list-item">
-            <span class="name">{{name}}</span>
-            <span class="date">{{date}}</span>
-            <br/>
+            <div class="row">
+              <div class="nine columns">
+                <span class="name">{{name}}</span>
+              </div>
+              <div class="three columns">
+                <span class="date">{{date}}</span>
+              </div>
+            </div>
             {{major}}
             {{#courses}}
             <div>
@@ -51,9 +56,14 @@
           <h4>{{heading}}</h4>
           {{#list}}
           <div class="list-item">
-            <span class="name">{{name}}, {{location}}</span>
-            <span class="date">{{date}}</span>
-            <br/>
+            <div class="row">
+              <div class="nine columns">
+                <span class="name">{{name}}, {{location}}</span>
+              </div>
+              <div class="three columns">
+                <span class="date">{{date}}</span>
+              </div>
+            </div>
             <span>{{major}}</span>, <span>{{advisor}}</span>
             <ul>
               {{#items}}
@@ -72,11 +82,22 @@
           <h4>{{heading}}</h4>
           {{#list}}
           <div class="list-item">
-            <span class="name">{{company}}</span>
-            <span class="date">{{start-date}} -- {{end-date}}</span>
-            <br/>
-            <span>{{title}}</span>
-            <span class="location">{{location}}</span>
+            <div class="row">
+              <div class="nine columns">
+                <span class="name">{{company}}</span>
+              </div>
+              <div class="three columns">
+                <span class="date">{{start-date}} -- {{end-date}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="nine columns">
+                <span>{{title}}</span>
+              </div>
+              <div class="three columns">
+                <span class="location">{{location}}</span>
+              </div>
+            </div>
             <ul>
               {{#items}}
               <li>{{name}}</li>
