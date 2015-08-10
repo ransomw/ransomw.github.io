@@ -35,7 +35,14 @@
                 <span class="date">{{date}}</span>
               </div>
             </div>
-            {{major}}
+            <div class="row">
+              <div class="nine columns">
+                <span>{{major}}</span>
+              </div>
+              <div class="three columns">
+                &nbsp
+              </div>
+            </div>
             {{#courses}}
             <div>
               {{#list}}
@@ -64,12 +71,26 @@
                 <span class="date">{{date}}</span>
               </div>
             </div>
+            <div class="row">
+              <div class="nine columns">
             <span>{{major}}</span>, <span>{{advisor}}</span>
-            <ul>
-              {{#items}}
-              <li>{{name}}</li>
-              {{/items}}
-            </ul>
+              </div>
+              <div class="three columns">
+                &nbsp
+              </div>
+            </div>
+            <div class="row">
+              <div class="one column">
+                &nbsp
+              </div>
+              <div class="eleven columns">
+                <ul>
+                  {{#items}}
+                  <li>{{name}}</li>
+                  {{/items}}
+                </ul>
+              </div>
+            </div>
           </div>
           {{/list}}
         </div>
@@ -98,11 +119,18 @@
                 <span class="location">{{location}}</span>
               </div>
             </div>
-            <ul>
-              {{#items}}
-              <li>{{name}}</li>
-              {{/items}}
-            </ul>
+            <div class="row">
+              <div class="one column">
+                &nbsp
+              </div>
+              <div class="eleven columns">
+                <ul>
+                  {{#items}}
+                  <li>{{name}}</li>
+                  {{/items}}
+                </ul>
+              </div>
+            </div>
           </div>
           {{/list}}
         </div>
@@ -113,14 +141,18 @@
         {{#skills}}
         <div>
           <h4>{{heading}}</h4>
-          <ul>
-            {{#list}}
-            <li>
-              <span>{{type}}</span>:
-              <span>{{items}}</span>
-            </li>
-            {{/list}}
-          </ul>
+          <div class="row">
+            <div class="twelve columns">
+              <ul>
+                {{#list}}
+                <li>
+                  <span>{{type}}</span>:
+                  <span>{{items}}</span>
+                </li>
+                {{/list}}
+              </ul>
+            </div>
+          </div>
         </div>
         {{/skills}}
       </section>
