@@ -1,98 +1,102 @@
 {
-    "contact": {
-        "name": "Ransom Williams",
-        "phone": "601 620 7030",
-        "email": "auvergnerw@gmail.com"
-    },
+  "contact": {
+    "name": "Ransom Williams",
+    "phone": "601 620 7030",
+    "email": "auvergnerw@gmail.com"
+  },
 
-    "schools": {
-        "heading": "Education",
-        "list": [
-            { "name": "California Institute of Technology",
-              "date": "June 2010",
-              "major": "B.S. in Mathematics"
-            },
-            { "name": "Southwest University for Nationalities",
-              "date": "October 2012 - July 2014",
-              "major": "Mandarin language courses"
-            }]
-    },
+  "schools": {
+    "heading": "Education",
+    "list": [
+      { "name": "California Institute of Technology",
+        "date": "June 2010",
+        "major": "B.S. in Mathematics"
+      },
+      { "name": "Southwest University for Nationalities",
+        "date": "October 2012 - July 2014",
+        "major": "Mandarin language courses"
+      }]
+  },
 
-    "research": {
-        "heading": "Research Experience",
-        "list": [
-            { "name": "SURF (Summer Undergraduate Research Fellowship)",
-              "location": "Caltech",
-              "major": "Mathematics",
-              "date": "Summer 2005",
-              "advisor": "Prof. Wilson",
-              "items": [
-                  {"name": "Studied Tutte's 5-flow conjecture, an old problem"},
-                  {"name": "Proved a restricted case"}
-              ]
-            },
-            { "name": "Ecoinformatics Summer Institute",
-              "location": "OSU",
-              "major": "Ecology, Atmospheric Science, Computer Science, Mech. Engineering",
-              "date": "Summer 2007",
-              "items": [
-                  {"name": "Work with undergraduate and early graduate researchers in an multidisciplinary environment"},
-                  {"name": "Studied shallow, gravity-driven fluid flow"}
-              ]
-            }
+  "research": {
+    "heading": "Research Experience",
+    "list": [
+      { "name": "SURF (Summer Undergraduate Research Fellowship)",
+        "location": "Caltech",
+        "major": "Mathematics",
+        "date": "Summer 2005",
+        "advisor": "Prof. Wilson",
+        "items": [
+          {"name": "Studied Tutte's 5-flow conjecture, an old problem"},
+          {"name": "Proved a restricted case"}
         ]
-    },
-
-    "experience": {
-        "heading": "Work Experience",
-        "list": [
-            { "company": "Filentech",
-              "start-date": "October 2014",
-              "end-date": "December 2014",
-              "title": "Web Developer",
-              "location": "Manila, Philippines",
-              "items": [
-                  {"name": "Built a web-based accounting system and cash portal for an online casino"},
-                  {"name": "Java backend with Play, simple AJAX frontend with JQuery"}
-              ]
-            },
-            { "company": "Cinafides Consulting",
-              "start-date": "March 2013",
-              "end-date": "June 2014",
-              "title": "Systems Developer",
-              "location": "Chengdu, China",
-              "items": [
-                  {"name": "Rapid prototyping of web and mobile applications"},
-                  {"name": "Hacked out some short-term projects"},
-                  {"name": "Gained business experience and client-facing insight"}
-              ]
-            },
-            { "company": "Synaptics",
-              "start-date": "March 2011",
-              "end-date": "July 2012",
-              "title": "Simulation Engineer",
-              "location": "Santa Clara, CA, USA",
-              "items": [
-                  {"name": "Designed, developed, and maintained automated hardware testing framework"},
-                  {"name": "Firmware build system edits"}
-              ]
-            }
+      },
+      { "name": "Ecoinformatics Summer Institute",
+        "location": "OSU",
+        "major": "Ecology, Atmospheric Science, Computer Science, Mech. Engineering",
+        "date": "Summer 2007",
+        "items": [
+          {"name": "Work with undergraduate and early graduate researchers in an multidisciplinary environment"},
+          {"name": "Studied shallow, gravity-driven fluid flow"}
         ]
-    },
+      }
+    ]
+  },
 
-    "skills": {
-        "heading": "Technical Strengths",
-        "list": [
-            { "type": "Computer Languages",
-              "items": "C, Python, Java, Bash, Haskell, Clojure, Javascript"
-            },
-            { "type": "APIs",
-              "items": "android, django, flask, express, play, angular"
-            },
-            { "type": "Tools",
-              "items": "emacs, make, npm, intellij, git, maven, Debian"
-            }
+  "experience": {
+    "heading": "Work Experience",
+    "list": [
+      { "company": "Filentech",
+        "start-date": "October 2014",
+        "end-date": "December 2014",
+        "title": "Web Developer",
+        "location": "Manila, Philippines",
+        "items": [
+          {"name": "Built a web-based accounting system and cash portal for an online casino"},
+          {"name": "Java backend with Play, simple AJAX frontend with JQuery"}
         ]
-    }
+      },
+      { "company": "Cinafides Consulting",
+        "start-date": "March 2013",
+        "end-date": "June 2014",
+        "title": "Systems Developer",
+        "location": "Chengdu, China",
+        "items": [
+          {"name": "Rapid prototyping of web and mobile applications"},
+          {"name": "Hacked out some short-term projects"},
+          {"name": "Gained business experience and client-facing insight"}
+        ]
+      },
+      { "company": "Synaptics",
+        "start-date": "March 2011",
+        "end-date": "July 2012",
+        "title": "Simulation Engineer",
+        "location": "Santa Clara, CA, USA",
+        "items": [
+          {"name": "Designed, developed, and maintained automated hardware testing framework"},
+          {"name": "Firmware build system edits"}
+        ]
+      }
+    ]
+  },
+
+  "skills": {
+    "heading": "Technical Strengths",
+    "list": [
+      { "type": "Computer Languages",
+        "items": "C, Python, Java, Bash, Haskell, Clojure, Javascript, SQL"
+      },
+      { "type": "APIs",
+        "items": "android, django, flask, express, play, angular, JUnit"
+      },
+      { "type": "Tools",
+        "items": "emacs, make, npm, intellij, git, maven, Debian, JSON schema"
+      },
+      { "type": "Concepts",
+        "items": "HTTP REST APIs, OOP, FP"
+      }
+
+    ]
+  }
 
 }
