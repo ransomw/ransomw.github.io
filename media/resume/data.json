@@ -8,19 +8,50 @@
   "schools": {
     "heading": "Education",
     "list": [
-      { "name": "California Institute of Technology",
-        "date": "June 2010",
-        "major": "B.S. in Mathematics"
-      },
       { "name": "Southwest University for Nationalities",
         "date": "October 2012 - July 2014",
         "major": "Mandarin language courses"
-      }]
+      },
+      { "name": "California Institute of Technology",
+        "date": "June 2010",
+        "major": "B.S. in Mathematics"
+      }
+    ]
+  },
+
+  "activities": {
+    "heading": "2015 Activities",
+    "list": [
+      {"name": "Tutoring",
+       "start-date": "September",
+       "end-date": "Present",
+       "description": "private lessons, a tutoring center, and volunteering through School on Wheels"
+      },
+      {"name": "Cognitive science programming project",
+       "start-date": "August",
+       "end-date": "Present",
+       "description": "productization of UCLA Prof. L. Shams and colleagues' work and an opportunity to learn more about neuroscience and cognitive science"
+      },
+      {"name": "Recreational math",
+       "start-date": "July",
+       "end-date": "Present",
+       "description": "weekly meetings with a friend to discuss readings in pure math (commutative and homological algebra, logic)"
+      }
+    ]
   },
 
   "research": {
     "heading": "Research Experience",
     "list": [
+      { "name": "Ecoinformatics Summer Institute",
+        "location": "OSU",
+        "major": "Ecology, Atmospheric Science, Computer Science, Mech. Engineering",
+        "date": "Summer 2007",
+        "items": [
+          {"name": "Work with undergraduate and early graduate researchers in an multidisciplinary environment"},
+          {"name": "Studied shallow, gravity-driven fluid flow"}
+        ]
+      },
       { "name": "SURF (Summer Undergraduate Research Fellowship)",
         "location": "Caltech",
         "major": "Mathematics",
@@ -29,15 +60,6 @@
         "items": [
           {"name": "Studied Tutte's 5-flow conjecture, an old problem"},
           {"name": "Proved a restricted case"}
-        ]
-      },
-      { "name": "Ecoinformatics Summer Institute",
-        "location": "OSU",
-        "major": "Ecology, Atmospheric Science, Computer Science, Mech. Engineering",
-        "date": "Summer 2007",
-        "items": [
-          {"name": "Work with undergraduate and early graduate researchers in an multidisciplinary environment"},
-          {"name": "Studied shallow, gravity-driven fluid flow"}
         ]
       }
     ]

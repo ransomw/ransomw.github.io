@@ -57,6 +57,78 @@
         {{/schools}}
       </section>
 
+
+      <section class="activities">
+        {{#activities}}
+        <div id="activities">
+          <h4>{{heading}}</h4>
+          {{#list}}
+          <div class="list-item">
+            <div class="row">
+              <div class="nine columns">
+                <span class="name">{{name}}</span>
+              </div>
+              <div class="three columns">
+                <span class="date">
+                  {{start-date}} &ndash; {{end-date}}
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="two columns">&nbsp</div>
+              <div class="nine columns">
+                <p>{{description}}</p>
+              </div>
+              <div class="one column">&nbsp</div>
+            </div>
+          </div>
+          {{/list}}
+        </div>
+        {{/activities}}
+      </section>
+
+
+      <section class="experience">
+        {{#experience}}
+        <div>
+          <h4>{{heading}}</h4>
+          {{#list}}
+          <div class="list-item">
+            <div class="row">
+              <div class="nine columns">
+                <span class="name">{{company}}</span>
+              </div>
+              <div class="three columns">
+                <span class="date">{{start-date}} &ndash; {{end-date}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="nine columns">
+                <span>{{title}}</span>
+              </div>
+              <div class="three columns">
+                <span class="location">{{location}}</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="one column">
+                &nbsp
+              </div>
+              <div class="eleven columns">
+                <ul>
+                  {{#items}}
+                  <li>{{name}}</li>
+                  {{/items}}
+                </ul>
+              </div>
+            </div>
+          </div>
+          {{/list}}
+        </div>
+        {{/experience}}
+      </section>
+
+
       <section class="research">
         {{#research}}
         <div>
@@ -95,46 +167,6 @@
           {{/list}}
         </div>
         {{/research}}
-      </section>
-
-      <section class="experience">
-        {{#experience}}
-        <div>
-          <h4>{{heading}}</h4>
-          {{#list}}
-          <div class="list-item">
-            <div class="row">
-              <div class="nine columns">
-                <span class="name">{{company}}</span>
-              </div>
-              <div class="three columns">
-                <span class="date">{{start-date}} -- {{end-date}}</span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="nine columns">
-                <span>{{title}}</span>
-              </div>
-              <div class="three columns">
-                <span class="location">{{location}}</span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="one column">
-                &nbsp
-              </div>
-              <div class="eleven columns">
-                <ul>
-                  {{#items}}
-                  <li>{{name}}</li>
-                  {{/items}}
-                </ul>
-              </div>
-            </div>
-          </div>
-          {{/list}}
-        </div>
-        {{/experience}}
       </section>
 
       <section class="skills">

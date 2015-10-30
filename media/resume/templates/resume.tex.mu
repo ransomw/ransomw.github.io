@@ -37,6 +37,52 @@
 
 {{/schools}}
 
+%-----
+% ACTIVITIES SECTION
+%-----
+
+{{#activities}}
+
+\begin{rSection}{ {{heading}} }
+
+
+
+{{#list}}
+%\begin{rSubsection}{ {{heading}} }{ {{start-date}} -- {{end-date}} }{ {{title}} }{ {{location}} }
+{\bf {{name}} } \hfill {\em {{start-date}} -- {{end-date}} } \\
+%% asdf
+{{{description}}} % triple-stach prevents escaping
+%% \end{rSubsection}
+
+{{/list}}
+
+\end{rSection}
+
+{{/activities}}
+
+
+%-----
+%	WORK EXPERIENCE SECTION
+%-----
+
+{{#experience}}
+
+\begin{rSection}{ {{heading}} }
+
+{{#list}}
+\begin{rSubsection}{ {{company}} }{ {{start-date}} -- {{end-date}} }{ {{title}} }{ {{location}} }
+{{#items}}
+  \item {{{name}}}
+{{/items}}
+\end{rSubsection}
+{{/list}}
+
+\end{rSection}
+
+{{/experience}}
+
+
+\pagebreak
 
 %-----
 %	RESEARCH EXPERIENCE SECTION
@@ -59,25 +105,6 @@
 
 {{/research}}
 
-%-----
-%	WORK EXPERIENCE SECTION
-%-----
-
-{{#experience}}
-
-\begin{rSection}{ {{heading}} }
-
-{{#list}}
-\begin{rSubsection}{ {{company}} }{ {{start-date}} - {{end-date}} }{ {{title}} }{ {{location}} }
-{{#items}}
-  \item {{{name}}}
-{{/items}}
-\end{rSubsection}
-{{/list}}
-
-\end{rSection}
-
-{{/experience}}
 
 %-----
 %	TECHNICAL STRENGTHS SECTION
