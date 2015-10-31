@@ -4,6 +4,8 @@ ga.l=+new Date;
 ga('create', 'UA-18120438-2', 'auto');
 ga('send', 'pageview');
 
+// todo: programatically add this to all links on page
+//       .... after making it not break C-click (new-tab) functionality
 var track_link = function (el) {
   var action;
   var label;
