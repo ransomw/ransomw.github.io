@@ -20,22 +20,22 @@
   },
 
   "activities": {
-    "heading": "2015 Activities",
+    "heading": "2015--2016 Activities",
     "list": [
       {"name": "Tutoring",
        "start-date": "September",
        "end-date": "Present",
-       "description": "private lessons, a tutoring center, and volunteering through School on Wheels"
+       "description": "private lessons, a tutoring center (2015 only), and volunteering through School on Wheels"
       },
-      {"name": "Cognitive science programming project",
+      {"name": "Cognitive science",
        "start-date": "August",
        "end-date": "Present",
-       "description": "productization of UCLA Prof. L. Shams and colleagues' work and an opportunity to learn more about neuroscience and cognitive science"
+       "description": "planned productization of UCLA Prof. L. Shams and colleagues' work, participation in weekly lab meetings"
       },
       {"name": "Recreational math",
        "start-date": "July",
        "end-date": "Present",
-       "description": "weekly meetings with a friend to discuss readings in pure math (commutative and homological algebra, logic)"
+       "description": "weekly meetings with a friend to discuss readings in pure math (algebra, logic, geometry)"
       }
     ]
   },
