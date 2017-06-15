@@ -4,13 +4,18 @@
 
 \documentclass{resume} % Use the custom resume.cls style
 
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+% Document margins
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
 
 {{#contact}}
-\name{ {{name}} }
+
+%%%%% moustache template api note %%%%%
+%%%%% triple-stach prevents escaping %%
+
+\name{ {{{name}}} }
 %\address{123 Broadway \\ City, State 12345} % Your address
 %\address{(388)~$\cdot$~051~$\cdot$~9242 \\ auvergnerw@gmail.com}
-\address{ {{phone}} \\ {{email}} }
+\address{ {{{phone}}} \\ {{{email}}} }
 {{/contact}}
 
 \begin{document}
@@ -21,13 +26,13 @@
 
 {{#schools}}
 
-\begin{rSection}{ {{heading}} }
+\begin{rSection}{ {{{heading}}} }
 
 {{#list}}
-{\bf {{name}} } \hfill {\em {{date}} } \\
-{{major}} {{#courses}} \smallskip \\
+{\bf {{{name}}} } \hfill {\em {{{date}}} } \\
+{{{major}}} {{#courses}} \smallskip \\
 {{#list}}
-  {{name}} \\
+  {{{name}}} \\
 {{/list}}
 {{/courses}}
 \\
@@ -43,15 +48,15 @@
 
 {{#activities}}
 
-\begin{rSection}{ {{heading}} }
+\begin{rSection}{ {{{heading}}} }
 
 
 
 {{#list}}
-%\begin{rSubsection}{ {{heading}} }{ {{start-date}} -- {{end-date}} }{ {{title}} }{ {{location}} }
-{\bf {{name}} } \hfill {\em {{start-date}} -- {{end-date}} } \\
+%\begin{rSubsection}{ {{{heading}}} }{ {{{start-date}}} -- {{{end-date}}} }{ {{{title}}} }{ {{{location}}} }
+{\bf {{{name}}} } \hfill {\em {{{start-date}}} -- {{{end-date}}} } \\
 %% asdf
-{{{description}}} % triple-stach prevents escaping
+{{{description}}}
 %% \end{rSubsection}
 
 {{/list}}
@@ -67,10 +72,10 @@
 
 {{#experience}}
 
-\begin{rSection}{ {{heading}} }
+\begin{rSection}{ {{{heading}}} }
 
 {{#list}}
-\begin{rSubsection}{ {{company}} }{ {{start-date}} -- {{end-date}} }{ {{title}} }{ {{location}} }
+\begin{rSubsection}{ {{{company}}} }{ {{{start-date}}} -- {{{end-date}}} }{ {{{title}}} }{ {{{location}}} }
 {{#items}}
   \item {{{name}}}
 {{/items}}
@@ -90,11 +95,11 @@
 
 {{#research}}
 
-\begin{rSection}{ {{heading}} }
+\begin{rSection}{ {{{heading}}} }
 
 {{#list}}
-\begin{rSubsection}{ {{name}}, {{location}} }{ {{date}} }
-{ {{major}} , {{advisor}} }{}
+\begin{rSubsection}{ {{{name}}}, {{{location}}} }{ {{{date}}} }
+{ {{{major}}} , {{{advisor}}} }{}
 {{#items}}
   \item {{{name}}}
 {{/items}}
@@ -112,13 +117,14 @@
 
 {{#skills}}
 
-\begin{rSection}{ {{heading}} }
+\begin{rSection}{ {{{heading}}} }
 
-\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+\begin{itemize}
 {{#list}}
-  {{type}} & {{items}} \\
+  \item {{{type}}} -- {{{items}}}
 {{/list}}
-\end{tabular}
+\end{itemize}
+
 
 \end{rSection}
 

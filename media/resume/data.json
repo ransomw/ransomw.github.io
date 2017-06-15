@@ -20,22 +20,22 @@
   },
 
   "activities": {
-    "heading": "2015--2016 Activities",
+    "heading": "Activities and work in other areas",
     "list": [
-      {"name": "Tutoring",
-       "start-date": "September",
-       "end-date": "Present",
-       "description": "private lessons, a tutoring center (2015 only), and volunteering through School on Wheels"
+      {"name": "Volunteer Tutoring",
+       "start-date": "September 2015",
+       "end-date": "present",
+       "description": "off-and-on weekly volunteering through School on Wheels"
       },
       {"name": "Cognitive science",
-       "start-date": "August",
-       "end-date": "Present",
-       "description": "planned productization of UCLA Prof. L. Shams and colleagues' work, participation in weekly lab meetings"
+       "start-date": "October 2015",
+       "end-date": "December 2016",
+       "description": "participation in weekly meetings at Prof. L. Shams UCLA lab"
       },
-      {"name": "Recreational math",
-       "start-date": "July",
-       "end-date": "Present",
-       "description": "weekly meetings with a friend to discuss readings in pure math (algebra, logic, geometry)"
+      {"name": "Tutoring",
+       "start-date": "September 2015",
+       "end-date": "April 2016",
+       "description": "private lessons, a tutoring center (2015 only), and volunteering through School on Wheels"
       }
     ]
   },
@@ -68,6 +68,18 @@
   "experience": {
     "heading": "Work Experience",
     "list": [
+      { "company": "Bargible",
+        "start-date": "April 2016",
+        "end-date": "May 2017",
+        "title": "Web Developer",
+        "location": "Los Angeles, CA, USA",
+        "items": [
+          {"name": "Extensive updates to existing implementation of online game/ecommerce hybrid business concept, both technical and feature-driven"},
+          {"name": "Continued Python experience, particularly Python 3"},
+          {"name": "Initial work experience with fully modern frontend JS patterns"},
+          {"name": "Broadened understanding of the requirements management picture"}
+        ]
+      },
       { "company": "Filentech",
         "start-date": "October 2014",
         "end-date": "December 2014",
@@ -106,16 +118,16 @@
     "heading": "Technical Strengths",
     "list": [
       { "type": "Computer Languages",
-        "items": "C, Python, Java, Bash, Haskell, Clojure, Javascript, SQL"
+        "items": "Python, Javascript, C, Java, Clojure, SQL, Haskell"
       },
       { "type": "APIs",
-        "items": "android, django, flask, express, play, angular, JUnit"
+        "items": "core.async in Clojure, asyncio in Python 3;  Python server-side web stacks, particularly Flask/werkzeug/WSGI, SQLAlchemy, and tornado/aiohttp, but some familiarity with Django as well; client-side patterns including Flux as in React and two-way data binding as in Angular; some Java, Javascript, and Clojure server-side (Play, express, ring/compojure); system-level io (e.g. sockets, subprocesses); redis pubsub; wip Om patterns client side; some AMPQ experience; system-level io (sockets, subprocesses, files) in C and Python; distant AVR work experience; GTK; very distant Java applet hobbyist experience"
       },
       { "type": "Tools",
-        "items": "emacs, make, npm, intellij, git, maven, Debian, JSON schema"
+        "items": "emacs, git, pip, npm, lein, pulp, maven"
       },
       { "type": "Concepts",
-        "items": "HTTP REST APIs, OOP, FP"
+        "items": "HTTP REST APIs, OOP, FP, CSP, coroutines"
       }
 
     ]
