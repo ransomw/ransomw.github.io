@@ -1,28 +1,33 @@
 body {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .contact {
-    margin-bottom: 3em;
+  margin-bottom: 3em;
 }
 
 .list-item {
-    margin: 1em;
+  margin: 1em;
+}
+
+.list-item .subheader {
+  display: flex;
+  justify-content: space-between;
 }
 
 .name {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .date {
-    font-style: italic;
-    /* float: right; */
+  font-style: italic;
+  /* float: right; */
 }
 
 .location {
-    /* float: right; */
+  /* float: right; */
 }
 
 li {
-    margin-bottom: .3em;
+  margin-bottom: .3em;
 }

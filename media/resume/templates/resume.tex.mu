@@ -15,7 +15,7 @@
 \name{ {{{name}}} }
 %\address{123 Broadway \\ City, State 12345} % Your address
 %\address{(388)~$\cdot$~051~$\cdot$~9242 \\ auvergnerw@gmail.com}
-\address{ {{{phone}}} \\ {{{email}}} }
+\address{ {{{phone}}} \\ {{{email}}} \\ {{{website}}} }
 {{/contact}}
 
 \begin{document}
@@ -43,30 +43,6 @@
 {{/schools}}
 
 %-----
-% ACTIVITIES SECTION
-%-----
-
-{{#activities}}
-
-\begin{rSection}{ {{{heading}}} }
-
-
-
-{{#list}}
-%\begin{rSubsection}{ {{{heading}}} }{ {{{start-date}}} -- {{{end-date}}} }{ {{{title}}} }{ {{{location}}} }
-{\bf {{{name}}} } \hfill {\em {{{start-date}}} -- {{{end-date}}} } \\
-%% asdf
-{{{description}}}
-%% \end{rSubsection}
-
-{{/list}}
-
-\end{rSection}
-
-{{/activities}}
-
-
-%-----
 %	WORK EXPERIENCE SECTION
 %-----
 
@@ -87,30 +63,6 @@
 {{/experience}}
 
 
-\pagebreak
-
-%-----
-%	RESEARCH EXPERIENCE SECTION
-%-----
-
-{{#research}}
-
-\begin{rSection}{ {{{heading}}} }
-
-{{#list}}
-\begin{rSubsection}{ {{{name}}}, {{{location}}} }{ {{{date}}} }
-{ {{{major}}} , {{{advisor}}} }{}
-{{#items}}
-  \item {{{name}}}
-{{/items}}
-\end{rSubsection}
-{{/list}}
-
-\end{rSection}
-
-{{/research}}
-
-
 %-----
 %	TECHNICAL STRENGTHS SECTION
 %-----
@@ -129,5 +81,54 @@
 \end{rSection}
 
 {{/skills}}
+
+
+\pagebreak
+
+%-----
+% ACTIVITIES SECTION
+%-----
+
+{{#activities}}
+
+\begin{rSection}{ {{{heading}}} }
+
+%% {{#list}}
+%% {\bf {{{name}}} } \hfill {\em {{{start-date}}} -- {{{end-date}}} } \\
+%% {{{description}}}
+%% {{/list}}
+
+{{#list}}
+\begin{rSubsection}{ {{{name}}} }{ {{{start-date}}} -- {{{end-date}}} }{.}{ {{{location}}} }
+\item {{{description}}}
+\end{rSubsection}
+{{/list}}
+
+
+\end{rSection}
+
+{{/activities}}
+
+
+%% %-----
+%% %	RESEARCH EXPERIENCE SECTION
+%% %-----
+
+%% {{#research}}
+
+%% \begin{rSection}{ {{{heading}}} }
+
+%% {{#list}}
+%% \begin{rSubsection}{ {{{name}}}, {{{location}}} }{ {{{date}}} }
+%% { {{{major}}} , {{{advisor}}} }{}
+%% {{#items}}
+%%   \item {{{name}}}
+%% {{/items}}
+%% \end{rSubsection}
+%% {{/list}}
+
+%% \end{rSection}
+
+%% {{/research}}
 
 \end{document}
