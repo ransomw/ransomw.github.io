@@ -62,6 +62,7 @@
 
 {{/experience}}
 
+\pagebreak
 
 %-----
 %	TECHNICAL STRENGTHS SECTION
