@@ -1,0 +1,33 @@
+const path = require('path')
+const fs = require('fs')
+
+const JSZip = require('jszip')
+const Docxtemplater = require('docxtemplater')
+
+const data = require(__dirname + '/../data.json')
+
+const content = fs.readFileSync(
+  path.resolve(__dirname, '..', 'templates', 'resume.docx'),
+  'binary')
+const zip = new JSZip(content)
+const doc = new Docxtemplater()
+doc.loadZip(zip)
+
+doc.setData(data)
+
+try {
+    doc.render()
+}
+catch (error) {
+    var e = {
+        message: error.message,
+        name: error.name,
+        stack: error.stack,
+        properties: error.properties,
+    }
+    console.log(JSON.stringify({error: e}))
+    throw error
+}
+
+const buf = doc.getZip().generate({type: 'nodebuffer'})
+fs.writeFileSync(path.resolve(__dirname, '..', 'resume.docx'), buf)
