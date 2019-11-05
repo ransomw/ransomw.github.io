@@ -84,9 +84,18 @@
   "experience": {
     "heading": "Work Experience",
     "list": [
+      { "company": "OneConcern",
+        "start-date": "March 2018",
+        "end-date": "present",
+        "title": "Software Engineer",
+        "location": "Menlo Park, CA, USA",
+        "items": [
+          {"name": "github.com/oneconcern/datamon"}
+        ]
+      },
       { "company": "Juji",
         "start-date": "January 2018",
-        "end-date": "present",
+        "end-date": "February 2019",
         "title": "Full Stack Developer",
         "location": "San Jose, CA, USA",
         "items": [
@@ -148,16 +157,16 @@
     "heading": "Technical Strengths and Project Experience",
     "list": [
       { "type": "General-purpose programming languages",
-        "items": "Python, C, Clojure, Javascript, Java, Lua, Haskell"
+        "items": "Python, C, Clojure, Javascript, Go, Java, Lua, Haskell"
       },
       { "type": "Domain-specific languages, dialects, and preprocessors",
         "items": "SQL (SQLite, Postgres), [wip] Datomic, HTML (Hiccup, React Templates, Jinja), CSS (Garden, Less), cpp"
       },
       { "type": "Shell languages",
-        "items": "bash, dash, Perl (jk), rc"
+        "items": "zsh, ash, Perl (jk), rc"
       },
       { "type": "Asynchronous programming mechanisms",
-        "items": "core.async in Clojure, asyncio in Python 3"
+        "items": "CSP (goroutines, Clojure's core.async), asyncio in Python 3"
       },
       { "type": "Server-side web stacks",
         "items": "Compojure and hugsql as well as some familiarity with Venia and Datomic in Clojure; prefer Flask/werkzeug and friends (Marshmallow, etc.), SQLAlchemy (at least the core toolkit), and aiohttp in Python; some Java and Javascript experience (Play, express)"
@@ -172,7 +181,7 @@
         "items": "Immutable and Ramda (wip Monet) in JS; components and spec in Clojure; system-level io (e.g. sockets, subprocesses); redis pubsub; some AMPQ experience, some Kafka; OAuth, SAML; distant AVR work experience; very distant GTK and Java applet hobbyist experience; recent 9P fanatacism"
       },
       { "type": "Miscellanious Tools",
-        "items": "emacs, git, pip, lein, npm, tmux, AWS EC2, [wip] Docker, Jenkins (user-level), sam"
+        "items": "emacs, git, magit, acme, npm, tmux, AWS EC2, [wip] Docker, Kubernetes, Jenkins (user-level), sam"
       },
       { "type": "Concepts",
         "items": "HTTP APIs (GraphQL, REST), OOP, FP, CSP, coroutines, finite-dimensional vector spaces"

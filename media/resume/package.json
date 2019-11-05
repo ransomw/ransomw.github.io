@@ -4,10 +4,10 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "mustache": "0.8.2",
-        "docxtemplater": "3.9.5",
-        "jszip": "2.6.1",
-        "when": "3.1.0"
+        "mustache": "^3.1.0",
+        "docxtemplater": "^3.9.5",
+        "jszip": "^2.6.1",
+        "when": "^3.1.0"
     },
     "devDependencies": {},
     "engines": {
