@@ -1,7 +1,7 @@
 {
   "contact": {
     "name": "Ransom Williams",
-    "phone": "415 216 8549",
+    "phone": "601 316 2271",
     "email": "auvergnerw@gmail.com",
     "website": "http://ransomw.github.io"
   },
@@ -86,11 +86,14 @@
     "list": [
       { "company": "OneConcern",
         "start-date": "March 2018",
-        "end-date": "present",
+        "end-date": "November 2022",
         "title": "Software Engineer",
         "location": "Menlo Park, CA, USA",
         "items": [
-          {"name": "github.com/oneconcern/datamon"}
+          {"name": "Contributions to github.com/oneconcern/datamon an S3/GCS frontend, “git for data storage”"},
+          {"name": "Initial golang work experience, worked in Python also"},
+          {"name": "Helped build and maintain application code in Python"},
+          {"name": "Deployed to Kubernetes and used Argo Workflows project"}
         ]
       },
       { "company": "Juji",
