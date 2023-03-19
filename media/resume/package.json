@@ -5,7 +5,7 @@
     "private": true,
     "dependencies": {
         "mustache": "^3.1.0",
-        "docxtemplater": "^3.9.5",
+        "docxtemplater": "^3.35.0",
         "jszip": "^2.6.1",
         "when": "^3.1.0"
     },
