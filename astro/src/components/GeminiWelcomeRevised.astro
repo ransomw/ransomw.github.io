@@ -1,0 +1,44 @@
+---
+import PortfolioItem from './PortfolioItem.astro';
+
+const myData = [
+  { t: "Astro", d: "Static site generator", l: "/astro" },
+  { t: "React", d: "UI Library", l: "/react" }
+];
+---
+
+
+<div class="bg-slate-50 min-h-screen font-sans text-slate-900 antialiased selection:bg-indigo-100">
+
+  <header class="max-w-4xl mx-auto pt-20 px-6">
+    <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+      <span>Ransom Williams</span>
+    </h1>
+
+    <div class="mt-8 space-y-6 text-xl md:text-2xl text-slate-600 leading-relaxed font-description">
+      <p>
+        I am a software engineer focused on building clean, performant, and accessible web applications. I enjoy solving complex architectural problems and turning them into simple, beautiful digital experiences.
+      </p>
+      <p>
+        When I'm not coding, you'll usually find me exploring abstract algebra or deep-diving into group theory!
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto py-20 px-6">
+    <h3 class="text-3xl font-bold border-b border-slate-200 pb-4 mb-10">Portfolio</h3>
+
+    <div class="grid gap-8">
+
+        {myData.map((item) => (
+        <PortfolioItem
+          title={item.t}
+          description={item.d}
+          link={item.l}
+          />
+        ))}
+
+    </div>
+  </main>
+
+</div>
