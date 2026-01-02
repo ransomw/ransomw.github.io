@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+
+
+@font-face {
+  font-family: 'IndieFlower';
+  /* Use a relative path to the file in src/assets */
+  src: url('../assets/fonts/IndieFlower-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Astloch';
+  /* Use a relative path to the file in src/assets */
+  src: url('../assets/fonts/Astloch-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'UnifrakturCook';
+  /* Use a relative path to the file in src/assets */
+  src: url('../assets/fonts/UnifrakturCook-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* This creates the 'font-description' utility class */
+  --font-description: "IndieFlower", ui-sans-serif, system-ui, sans-serif;
+  --font-portfolio-item: "UnifrakturCook", ui-sans-serif, system-ui, sans-serif;
+
+
+  /* You can also adjust other theme scales here if needed */
+  --text-xl: 1.5rem;
+  --text-2xl: 1.75rem;
+}

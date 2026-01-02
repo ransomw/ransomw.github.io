@@ -1,0 +1,54 @@
+---
+import PortfolioItem from './PortfolioItem.astro';
+
+import projects from '../static-data/portfolio.json'
+---
+
+
+<div class="bg-slate-50 min-h-screen font-sans text-slate-900 antialiased selection:bg-indigo-100">
+
+  <header class="max-w-4xl mx-auto pt-20 px-6">
+    <h1 class="text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
+      <span>Ransom Williams</span>
+    </h1>
+
+    <div class="mt-8 space-y-6 text-xl md:text-2xl text-slate-600 leading-relaxed font-description">
+      <p>
+        I'm a math student with experience as a software developer.
+      </p>
+      <p>
+        Please see my
+        <a href="media/resume/resume.pdf"
+           class="text-slate-400 hover:text-indigo-500">resume</a>
+        (also available in
+        <a href="media/resume/resume.docx"
+           class="text-slate-400 hover:text-indigo-500">docx</a>
+        format)
+        for background and contact information.
+      </p>
+      <p>
+        Do not hesitate to
+        <a href="tel:601 316 2271"
+           class="text-slate-400 hover:text-indigo-500">
+          give me call</a>.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto py-20 px-6">
+    <h3 class="text-3xl font-bold border-b border-slate-200 pb-4 mb-10">Portfolio</h3>
+
+    <div class="grid gap-8">
+
+        {projects.map((item) => (
+        <PortfolioItem
+          title={item.t}
+          description={item.d}
+          link={item.l}
+          />
+        ))}
+
+    </div>
+  </main>
+
+</div>

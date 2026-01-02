@@ -1,0 +1,11 @@
+[
+  {"t": "jxn-2023-todos",
+   "d": "a single-page web application",
+   "l": "https://github.com/ransomw/jxn-2023-todos" },
+  { "t": "sfbrow",
+    "d": "Simple file browser for <a href=\"http://9front.org\">plan 9</a>",
+    "l": "https://github.com/ransomw/plan9-bikeshed/tree/main/sfbrow" },
+  { "t": "botiful-soup",
+    "d": "naive NLP in Clojure",
+    "l": "http://github.com/ransomw/botiful-soup" }
+]
