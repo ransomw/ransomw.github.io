@@ -1,0 +1,4 @@
+[
+  { t: "Astro", d: "Static site generator", l: "/astro" },
+  { t: "React", d: "UI Library", l: "/react" }
+]
