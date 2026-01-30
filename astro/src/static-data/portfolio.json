@@ -1,6 +1,6 @@
 [
   {"t": "jxn-2023-todos",
-   "d": "a single-page web application",
+   "d": "a single-page todo list web application",
    "l": "https://github.com/ransomw/jxn-2023-todos" },
   { "t": "sfbrow",
     "d": "Simple file browser for <a href=\"http://9front.org\">plan 9</a>",
