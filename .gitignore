@@ -4,3 +4,5 @@ node_modules/
 *.aux
 
 media/resume-2022/resume.tex
+
+.env

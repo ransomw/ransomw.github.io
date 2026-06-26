@@ -1,5 +1,9 @@
 ---
 import '../styles/global.css'
+
+const cfToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+
+const beaconData = JSON.stringify({ token: cfToken });
 ---
 
 <!doctype html>
@@ -11,6 +15,14 @@ import '../styles/global.css'
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- todo: does meta data help seo? do i care about seo? -->
 		<meta name="generator" content={Astro.generator} />
+	{cfToken && (
+  <script 
+    is:inline 
+    defer 
+    src="https://cloudflareinsights.com" 
+    data-cf-beacon={beaconData}
+  ></script>
+)}
 	</head>
 	<body>
 		<slot />
